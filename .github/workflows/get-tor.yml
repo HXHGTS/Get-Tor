@@ -47,7 +47,7 @@ jobs:
     - name: Create tag
       id: create_tag
       run: |
-        TAG_NAME=$(date -u +"%Y%m%d")
+        TAG_NAME=$(date -u +"%Y%m%d%H%M%S")
         if git rev-parse "$TAG_NAME" >/dev/null 2>&1; then
           echo "Tag $TAG_NAME already exists, deleting it from remote."
           git push --delete origin "$TAG_NAME"
