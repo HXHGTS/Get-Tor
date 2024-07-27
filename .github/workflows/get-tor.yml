@@ -34,7 +34,7 @@ jobs:
     - name: Get Bundle Files
       run: |
         sudo mkdir -p ./gettor
-        sudo mv -f ./tor/{libcrypto.so.3,libevent-2.1.so.7,libssl.so.3,libstdc++.so.6,tor} ./gettor/
+        sudo mv -f ./tor/{tor} ./gettor/
         sudo mv -f ./tor/pluggable_transports/{lyrebird,conjure-client,snowflake-client} ./gettor/
         sudo mv -f ./geoip ./geoip6 ./gettor/
         sudo chown -R 777 ./gettor
