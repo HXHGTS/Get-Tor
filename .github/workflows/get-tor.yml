@@ -44,7 +44,7 @@ jobs:
         sudo git add ./gettor/*
 
 
-    - name: Create tag
+    - name: Create tag # echo "::set-output name=TAG_NAME::$TAG_NAME"
       id: create_tag
       run: |
         TAG_NAME=$(date -u +"%Y%m%d%H%M%S")
@@ -58,7 +58,7 @@ jobs:
         fi
         git tag $TAG_NAME
         git push --force origin $TAG_NAME
-        echo "::set-output name=TAG_NAME::$TAG_NAME"
+        echo "TAG_NAME=$TAG_NAME" >> $GITHUB_OUTPUT
 
     - name: Create release
       id: create_release
