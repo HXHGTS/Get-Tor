@@ -34,7 +34,7 @@ jobs:
     - name: Get Bundle Files
       run: |
         sudo mkdir -p ./gettor
-        sudo mv -f ./tor/{tor} ./gettor/
+        sudo mv -f ./tor/tor ./gettor/
         sudo mv -f ./tor/pluggable_transports/{lyrebird,conjure-client,snowflake-client} ./gettor/
         sudo mv -f ./geoip ./geoip6 ./gettor/
         sudo chown -R 777 ./gettor
