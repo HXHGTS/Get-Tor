@@ -1,0 +1,14 @@
+[Unit]
+Description=Anonymizing Overlay Network TOR
+After=network.target
+
+[Service]
+Type=simple
+User=debian-tor
+ExecStart=/usr/bin/tor --defaults-torrc /etc/tor/torrc
+ExecReload=/bin/kill -HUP $MAINPID
+KillSignal=SIGINT
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
