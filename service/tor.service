@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 User=debian-tor
-ExecStart=/usr/bin/tor --defaults-torrc /usr/share/tor
+ExecStart=/usr/bin/tor --defaults-torrc /usr/share/tor/torrc
 ExecReload=/bin/kill -HUP $MAINPID
 KillSignal=SIGINT
 Restart=on-failure
